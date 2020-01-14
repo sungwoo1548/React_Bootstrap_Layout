@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col } from 'react-bootstrap';
+
+import ImgCarousel from './ImgCarousel'
 
 function App() {
+  const imgURL = [
+    { name: "First slide", url: "img/img001.jpg" },
+    { name: "Second slide", url: "img/img002.jpg" },
+    { name: "Third slide", url: "img/img003.jpg" },
+  ]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container style={{maxWidth:"100vw"}}>
+      <Row>
+        <ImgCarousel imgURL={imgURL} />
+      </Row>
+      <Row>
+        <Col>1 of 3</Col>
+        <Col xs={6}>2 of 3 (wider)</Col>
+        <Col>3 of 3</Col>
+      </Row>
+    </Container>
   );
 }
 
